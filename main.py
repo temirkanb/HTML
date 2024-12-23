@@ -12,7 +12,7 @@ ROOT_DIR = os.path.dirname(__file__)
 class MyServer(BaseHTTPRequestHandler):
     """
         Специальный класс, который отвечает за
-        обработку входящих запросов от клиентов
+        обработку входящих запросов от
     """
     content_file = os.path.join(ROOT_DIR, 'page', 'webpage.html')
 
@@ -28,7 +28,7 @@ class MyServer(BaseHTTPRequestHandler):
         self.send_response(200)  # Отправка кода ответа
         self.send_header("Content-type", "text/html")
         self.end_headers()
-        self.wfile.write(bytes(page_content, "utf-8"))
+        self.wfile.write(bytes(page_content))
 
 
 if __name__ == "__main__":
